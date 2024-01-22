@@ -19,7 +19,7 @@ Este Turborepo incluye las siguientes aplicaciones/paquetes:
 ### Videos
 - `data-fetching`: [Data Fetching en NextJS 13 paso a paso
   ](https://www.youtube.com/watch?v=7JJjOoV31Xg)
-
+- `data-caching`: [Data Caching en NextJS: todo lo que necesitas saber](https://www.youtube.com/watch?v=-FY5NRvTDrA&t=12s)
 ### Apps and Packages
 - `eslint-config-custom`: Configuración de ESLint común a todas las aplicaciones
 - `tailwind-config`: Configuración Tailwind común a todas las aplicaciones

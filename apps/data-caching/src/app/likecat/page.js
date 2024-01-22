@@ -1,17 +1,11 @@
 import Image from 'next/image';
 import Vote from '@/app/likecat/Vote';
-async function fetchRandomCatImage() {
-  console.time('--fetching');
-  const cacheOptions = {
-    // next: { revalidate: 3 },
-    // cache: 'no-store',
-    // next: { tags: ['cat', 'image'] },
-  };
-  const res = await fetch(
-    'https://api.thecatapi.com/v1/images/search',
-    cacheOptions,
-  );
 
+export async function fetchRandomCatImage() {
+  console.time('--fetching');
+  const res = await fetch('https://api.thecatapi.com/v1/images/search', {
+    next: { tags: ['cat', 'image'] },
+  });
   console.timeEnd('--fetching');
 
   const images = await res.json();
@@ -19,10 +13,8 @@ async function fetchRandomCatImage() {
 }
 
 const CatImage = async () => {
-  // Refresca el navegador y verás cuánto tiempo tarda
-  // Usar Cmd + shift + R para refrescar la cache
   const image = await fetchRandomCatImage();
-  console.log({ image });
+
   return (
     <Image
       src={image}
@@ -33,16 +25,16 @@ const CatImage = async () => {
     />
   );
 };
-const BreedsList = async ({}) => {
+const LikeCatPage = async ({}) => {
   return (
     <>
       {
         // *.thecatapi.com must be in next.config
       }
       <CatImage />
-      {/*<Vote />*/}
+      <Vote />
     </>
   );
 };
 
-export default BreedsList;
+export default LikeCatPage;
