@@ -6,5 +6,8 @@
   "types": "index.ts",
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2"
   }
 }
