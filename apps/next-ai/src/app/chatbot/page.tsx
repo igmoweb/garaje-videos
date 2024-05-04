@@ -1,9 +1,19 @@
 'use client';
-import { useChat } from 'ai/react';
 import { Message } from '../../components/message.tsx';
 
 export default function Chatbot() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const messages = [
+    {
+      id: 1,
+      role: 'user',
+      content: 'Hola, qué tal',
+    },
+    {
+      id: 2,
+      role: 'assistant',
+      content: 'Buenos días',
+    },
+  ];
   return (
     <>
       <div className="flex flex-col space-y-1.5 pb-6">
@@ -16,15 +26,10 @@ export default function Chatbot() {
         })}
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="fixed right-0 left-0 bg-gray-800 bottom-0 p-6"
-      >
+      <form className="fixed right-0 left-0 bg-gray-800 bottom-0 p-6">
         <input
           type="text"
           className="text-black text-xs border border-gray-300 rounded w-full p-1"
-          value={input}
-          onChange={handleInputChange}
           placeholder="Pregunta lo que quieras..."
         />
       </form>
