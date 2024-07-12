@@ -1,15 +1,25 @@
 'use client';
 import { useState } from 'react';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
 export default function StickersPage() {
   const [result, setResult] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setResult(null);
 
     const prompt = e.target.prompt.value;
+
+    const response = await fetch('/api/stickers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt }),
+    });
+
+    const prediction = await response.json();
+    setResult(prediction);
   };
 
   return (
@@ -19,6 +29,8 @@ export default function StickersPage() {
           Crea pegatinas!
         </h1>
       </div>
+
+      {result && <img src={result.output[0]} className="max-w-60" alt="" />}
 
       <form onSubmit={handleSubmit} className="animate-in fade-in duration-700">
         <div className="flex mt-8">
