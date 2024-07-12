@@ -21,6 +21,8 @@ Este Turborepo incluye las siguientes aplicaciones/paquetes:
   ](https://www.youtube.com/watch?v=7JJjOoV31Xg)
 - `data-caching`: [Data Caching en NextJS: todo lo que necesitas saber](https://www.youtube.com/watch?v=-FY5NRvTDrA&t=12s)
 - `next-layouts`: [Layouts en NextJS paso a paso](https://github.com/igmoweb/garaje-videos)
+- `next-ai`: [Creamos dos aplicaciones de IA con Vercel SDK, OpenAI y Replicate
+  ](https://www.youtube.com/watch?v=j5Q8g5dh3aM)
 
 ### Apps and Packages
 - `eslint-config-custom`: Configuración de ESLint común a todas las aplicaciones
